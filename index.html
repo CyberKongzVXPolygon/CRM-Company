@@ -5,8 +5,753 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRM Company - European Business Formation Services</title>
     <meta name="description" content="Expert company formation services across Spain, Portugal, Slovenia, and Netherlands. Your gateway to European business formation with local expertise.">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --text-white: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --bg-dark: #1f2937;
+            --text-light-dark: #e5e7eb;
+            --border-dark: #374151;
+            --border-color: #e5e7eb;
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --error-color: #dc2626;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: var(--bg-white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .logo {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo-placeholder {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: var(--text-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-white);
+            min-width: 200px;
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--border-radius);
+            padding: 0.5rem 0;
+            list-style: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            z-index: 1001;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li a {
+            display: block;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .dropdown-menu li a:hover {
+            background: var(--bg-light);
+            color: var(--primary-color);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .language-selector select {
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            background: var(--bg-white);
+            color: var(--text-dark);
+        }
+
+        .btn-login {
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: var(--text-white);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-login:hover {
+            background: var(--secondary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--text-white);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--text-white);
+        }
+
+        .hero-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+        }
+
+        .hero-image-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--text-white);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            text-align: center;
+            min-height: 300px;
+        }
+
+        .hero-image-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-image-placeholder span {
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+
+        /* Countries Section */
+        .countries-section {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .country-card {
+            background: var(--bg-white);
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .country-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .country-flag {
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .country-flag img {
+            width: 60px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .flag-placeholder {
+            width: 60px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-size: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .spain-flag {
+            background: linear-gradient(to bottom, #c60b1e 33%, #ffc400 33%, #ffc400 66%, #c60b1e 66%);
+        }
+
+        .portugal-flag {
+            background: linear-gradient(to right, #046a38 40%, #da020e 40%);
+        }
+
+        .slovenia-flag {
+            background: linear-gradient(to bottom, #ffffff 33%, #0000ff 33%, #0000ff 66%, #ff0000 66%);
+        }
+
+        .netherlands-flag {
+            background: linear-gradient(to bottom, #ae1c28 33%, #ffffff 33%, #ffffff 66%, #21468b 66%);
+        }
+
+        .country-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .country-type {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .country-pricing {
+            margin-bottom: 1.5rem;
+        }
+
+        .price-from {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            display: block;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .country-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .country-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .country-features i {
+            color: var(--success-color);
+            margin-right: 0.5rem;
+            width: 16px;
+        }
+
+        .btn-country {
+            background: var(--primary-color);
+            color: var(--text-white);
+            width: 100%;
+        }
+
+        .btn-country:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: var(--text-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        .step h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .feature-icon i {
+            font-size: 2rem;
+            color: var(--text-white);
+        }
+
+        .feature h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .feature p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            text-align: center;
+            color: var(--text-white);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-section .btn-primary {
+            background: var(--text-white);
+            color: var(--primary-color);
+        }
+
+        .cta-section .btn-primary:hover {
+            background: var(--bg-light);
+        }
+
+        .cta-section .btn-secondary {
+            border-color: var(--text-white);
+            color: var(--text-white);
+        }
+
+        .cta-section .btn-secondary:hover {
+            background: var(--text-white);
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--text-white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-white);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--text-white);
+        }
+
+        .footer-section p {
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: var(--text-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--bg-white);
+                flex-direction: column;
+                padding: 2rem;
+                transition: left 0.3s ease;
+                box-shadow: var(--shadow-lg);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .countries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            body.menu-open {
+                overflow: hidden;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -15,7 +760,7 @@
             <div class="nav-container">
                 <div class="nav-logo">
                     <a href="index.html">
-                        <img src="images/crm-logo.png" alt="CRM Company" class="logo">
+                        <div class="logo-placeholder">CRM</div>
                         <span class="logo-text">CRM Company</span>
                     </a>
                 </div>
@@ -57,11 +802,11 @@
                     <a href="login.html" class="btn-login">Login</a>
                 </div>
                 
-                <div class="mobile-menu-toggle">
+                <button class="mobile-menu-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
@@ -78,7 +823,10 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images/europe-map.png" alt="European Business Formation">
+                <div class="hero-image-placeholder">
+                    <i class="fas fa-globe-europe"></i>
+                    <span>European Business Formation</span>
+                </div>
             </div>
         </div>
     </section>
@@ -92,7 +840,7 @@
             <div class="countries-grid">
                 <div class="country-card" data-country="spain">
                     <div class="country-flag">
-                        <img src="images/flags/spain.png" alt="Spain Flag">
+                        <div class="flag-placeholder spain-flag">🇪🇸</div>
                     </div>
                     <h3>Spain</h3>
                     <p class="country-type">S.L. Formation</p>
@@ -110,7 +858,7 @@
 
                 <div class="country-card" data-country="portugal">
                     <div class="country-flag">
-                        <img src="images/flags/portugal.png" alt="Portugal Flag">
+                        <div class="flag-placeholder portugal-flag">🇵🇹</div>
                     </div>
                     <h3>Portugal</h3>
                     <p class="country-type">Lda./S.A. Formation</p>
@@ -128,7 +876,7 @@
 
                 <div class="country-card" data-country="slovenia">
                     <div class="country-flag">
-                        <img src="images/flags/slovenia.png" alt="Slovenia Flag">
+                        <div class="flag-placeholder slovenia-flag">🇸🇮</div>
                     </div>
                     <h3>Slovenia</h3>
                     <p class="country-type">D.O.O. Formation</p>
@@ -146,7 +894,7 @@
 
                 <div class="country-card" data-country="netherlands">
                     <div class="country-flag">
-                        <img src="images/flags/netherlands.png" alt="Netherlands Flag">
+                        <div class="flag-placeholder netherlands-flag">🇳🇱</div>
                     </div>
                     <h3>Netherlands</h3>
                     <p class="country-type">B.V. Formation</p>
@@ -300,6 +1048,74 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        // Main JavaScript for CRM Company Website
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize mobile menu
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const body = document.body;
+            
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    navMenu.classList.toggle('active');
+                    mobileToggle.classList.toggle('active');
+                    body.classList.toggle('menu-open');
+                });
+            }
+            
+            // Initialize language selector
+            const languageSelector = document.getElementById('language');
+            if (languageSelector) {
+                const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+                languageSelector.value = currentLang;
+                
+                languageSelector.addEventListener('change', function() {
+                    const selectedLang = this.value;
+                    localStorage.setItem('selectedLanguage', selectedLang);
+                });
+            }
+            
+            // Initialize country card interactions
+            const countryCards = document.querySelectorAll('.country-card');
+            countryCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const country = this.getAttribute('data-country');
+                    if (country) {
+                        // Remove selection from all cards
+                        countryCards.forEach(c => c.classList.remove('selected'));
+                        // Add selection to clicked card
+                        this.classList.add('selected');
+                        console.log('Country selected:', country);
+                    }
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            const offsetTop = targetElement.offsetTop - 80;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            console.log('CRM Company website loaded successfully');
+        });
+    </script>
 </body>
 </html>

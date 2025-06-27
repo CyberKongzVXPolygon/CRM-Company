@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spain S.L. Formation - CRM Company</title>
-    <meta name="description" content="Establish your Spanish limited liability company with double tax treaty benefits and comprehensive legal protection. Professional incorporation services starting from $750.">
+    <title>Portugal Lda. Formation - CRM Company</title>
+    <meta name="description" content="Establish your Portuguese company with three flexible incorporation methods, including the revolutionary 'Empresa na Hora' instant setup. Professional services starting from $850.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Reset and Base Styles */
@@ -163,7 +163,7 @@
         /* Country Hero */
         .country-hero {
             padding: 120px 0 80px;
-            background: linear-gradient(135deg, #c60b1e 0%, #ffc400 100%);
+            background: linear-gradient(135deg, #046a38 0%, #da020e 100%);
             color: var(--text-white);
             position: relative;
             overflow: hidden;
@@ -202,7 +202,7 @@
             font-size: 3rem;
             border: 2px solid var(--text-white);
             box-shadow: var(--shadow-lg);
-            background: linear-gradient(to bottom, #c60b1e 33%, #ffc400 33%, #ffc400 66%, #c60b1e 66%);
+            background: linear-gradient(to right, #046a38 40%, #da020e 40%);
         }
 
         .country-hero h1 {
@@ -317,10 +317,90 @@
             line-height: 1.6;
         }
 
+        /* Formation Methods Section */
+        .methods-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .method-card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .method-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .method-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .method-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--text-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .method-icon i {
+            font-size: 1.25rem;
+        }
+
+        .method-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .method-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .method-features {
+            list-style: none;
+        }
+
+        .method-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        .method-features i {
+            color: var(--success-color);
+            width: 16px;
+            flex-shrink: 0;
+        }
+
         /* Process Section */
         .process-section {
             padding: 80px 0;
-            background: var(--bg-light);
+            background: var(--bg-white);
         }
 
         .process-steps {
@@ -331,16 +411,17 @@
         }
 
         .process-step {
-            background: var(--bg-white);
+            background: var(--bg-light);
             border-radius: var(--border-radius);
             padding: 2rem;
-            box-shadow: var(--shadow);
-            border-left: 4px solid var(--primary-color);
+            text-align: center;
+            border: 2px solid var(--border-color);
         }
 
         .step-header {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 1rem;
             margin-bottom: 1rem;
         }
@@ -366,6 +447,7 @@
         .process-step p {
             color: var(--text-light);
             margin-bottom: 1rem;
+            text-align: left;
         }
 
         .timeline {
@@ -381,7 +463,7 @@
         /* Advantages Section */
         .advantages-section {
             padding: 80px 0;
-            background: var(--bg-white);
+            background: var(--bg-light);
         }
 
         .advantages-grid {
@@ -424,60 +506,20 @@
             line-height: 1.6;
         }
 
-        /* Requirements Section */
-        .requirements-section {
-            padding: 80px 0;
-            background: var(--bg-light);
-        }
-
-        .requirements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .requirement-card {
-            background: var(--bg-white);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow);
-            border: 2px solid var(--border-color);
-        }
-
-        .requirement-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .requirement-label {
-            font-size: 0.875rem;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-
-        .requirement-description {
-            font-size: 0.875rem;
-            color: var(--text-dark);
-        }
-
-        /* Tax Benefits Section */
-        .tax-benefits-section {
+        /* Company Types Section */
+        .company-types-section {
             padding: 80px 0;
             background: var(--bg-white);
         }
 
-        .benefits-grid {
+        .types-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .benefit-card {
+        .type-card {
             background: var(--bg-light);
             border-radius: var(--border-radius);
             padding: 2rem;
@@ -485,68 +527,47 @@
             transition: var(--transition);
         }
 
-        .benefit-card:hover {
+        .type-card:hover {
             border-color: var(--primary-color);
             background: var(--bg-white);
             box-shadow: var(--shadow);
         }
 
-        .benefit-card h3 {
-            font-size: 1.25rem;
+        .type-card h3 {
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text-dark);
         }
 
-        .benefit-card p {
+        .type-card p {
             color: var(--text-light);
+            margin-bottom: 1.5rem;
             line-height: 1.6;
         }
 
-        /* Industries Section */
-        .industries-section {
-            padding: 80px 0;
-            background: var(--bg-light);
+        .type-features {
+            list-style: none;
         }
 
-        .industries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .industry-card {
-            background: var(--bg-white);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            border: 2px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .industry-card:hover {
-            border-color: var(--primary-color);
-            background: var(--bg-white);
-            box-shadow: var(--shadow);
-        }
-
-        .industry-card h3 {
-            font-size: 1.125rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        .industry-card p {
-            color: var(--text-light);
+        .type-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
             font-size: 0.875rem;
+        }
+
+        .type-features i {
+            color: var(--success-color);
+            width: 16px;
+            flex-shrink: 0;
         }
 
         /* CTA Section */
         .cta-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, #c60b1e, #ffc400);
+            background: linear-gradient(135deg, #046a38, #da020e);
             text-align: center;
             color: var(--text-white);
         }
@@ -679,6 +700,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .methods-grid {
+                grid-template-columns: 1fr;
+            }
+
             .process-steps {
                 grid-template-columns: 1fr;
             }
@@ -687,24 +712,12 @@
                 grid-template-columns: 1fr;
             }
 
-            .requirements-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .industries-grid {
+            .types-grid {
                 grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 480px) {
-            .requirements-grid {
-                grid-template-columns: 1fr;
-            }
-
             .section-title {
                 font-size: 2rem;
             }
@@ -751,23 +764,23 @@
         <div class="container">
             <div class="hero-content">
                 <div class="country-flag">
-                    <div class="flag-placeholder">🇪🇸</div>
+                    <div class="flag-placeholder">🇵🇹</div>
                 </div>
-                <h1>Spain S.L. Formation</h1>
-                <p class="hero-subtitle">Establish your Spanish limited liability company with double tax treaty benefits and comprehensive legal protection. Professional incorporation services starting from $750.</p>
+                <h1>Portugal Lda. Formation</h1>
+                <p class="hero-subtitle">Establish your Portuguese company with three flexible incorporation methods, including the revolutionary "Empresa na Hora" instant setup. Professional services starting from $850.</p>
                 
                 <div class="hero-stats">
                     <div class="stat">
-                        <span class="stat-number">€3,006</span>
+                        <span class="stat-number">€1</span>
                         <span class="stat-label">Minimum Capital</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">15-20 days</span>
+                        <span class="stat-number">5-10 days</span>
                         <span class="stat-label">Formation Time</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">100+</span>
-                        <span class="stat-label">Tax Treaties</span>
+                        <span class="stat-number">21%</span>
+                        <span class="stat-label">Corporate Tax</span>
                     </div>
                 </div>
             </div>
@@ -777,40 +790,97 @@
     <!-- Services Section -->
     <section class="services-section">
         <div class="container">
-            <h2 class="section-title">Our Spain Formation Services</h2>
-            <p class="section-subtitle">Spain offers exceptional advantages for international businesses with its extensive tax treaty network, strategic location, and gateway access to both European and Latin American markets.</p>
+            <h2 class="section-title">Our Portugal Formation Services</h2>
+            <p class="section-subtitle">Portugal offers one of Europe's most business-friendly environments with competitive tax rates, EU market access, and innovative formation methods.</p>
             
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-id-card"></i>
                     </div>
-                    <h3>NIE Number</h3>
-                    <p>Essential identification number for non-EU residents conducting business in Spain.</p>
+                    <h3>NIF Registration</h3>
+                    <p>NIF (Número de Identificação Fiscal) acquisition for non-resident individuals.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Fiscal Representation</h3>
+                    <p>Monthly fiscal representation for non-resident company owners and directors.</p>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>Social Security Registration</h3>
-                    <p>Required identification for companies planning to hire employees in Spain.</p>
+                    <h3>Beneficial Ownership</h3>
+                    <p>Mandatory registration of ultimate beneficial owners with Portuguese authorities.</p>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-globe"></i>
+                        <i class="fas fa-university"></i>
                     </div>
-                    <h3>Foreign Investment Declaration</h3>
-                    <p>Mandatory declaration for foreign investments exceeding €3,005.06.</p>
+                    <h3>Bank Account Opening</h3>
+                    <p>Professional assistance with Portuguese bank account opening procedures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formation Methods Section -->
+    <section class="methods-section">
+        <div class="container">
+            <h2 class="section-title">Three Formation Methods</h2>
+            
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-header">
+                        <div class="method-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>Online Formation</h3>
+                    </div>
+                    <p>Complete digital incorporation process through the Portuguese online business registration system.</p>
+                    <ul class="method-features">
+                        <li><i class="fas fa-check"></i> 100% digital process</li>
+                        <li><i class="fas fa-check"></i> Remote completion</li>
+                        <li><i class="fas fa-check"></i> Cost-effective option</li>
+                        <li><i class="fas fa-check"></i> 5-7 business days</li>
+                    </ul>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-certificate"></i>
+                <div class="method-card">
+                    <div class="method-header">
+                        <div class="method-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Traditional Formation</h3>
                     </div>
-                    <h3>Document Legalization</h3>
-                    <p>Apostille and legalization services for international documents.</p>
+                    <p>Traditional incorporation method with personalized service and face-to-face consultations.</p>
+                    <ul class="method-features">
+                        <li><i class="fas fa-check"></i> Personal consultation</li>
+                        <li><i class="fas fa-check"></i> Custom documentation</li>
+                        <li><i class="fas fa-check"></i> Full legal support</li>
+                        <li><i class="fas fa-check"></i> 7-10 business days</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-header">
+                        <div class="method-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Empresa na Hora</h3>
+                    </div>
+                    <p>Revolutionary instant company formation system - get your company incorporated in just one hour!</p>
+                    <ul class="method-features">
+                        <li><i class="fas fa-check"></i> 1-hour formation</li>
+                        <li><i class="fas fa-check"></i> Pre-approved names</li>
+                        <li><i class="fas fa-check"></i> Standard articles</li>
+                        <li><i class="fas fa-check"></i> Immediate start</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -819,43 +889,43 @@
     <!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2 class="section-title">Spain S.L. Formation Process</h2>
+            <h2 class="section-title">Portugal Formation Process</h2>
             
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-header">
                         <div class="step-number">1</div>
-                        <h3>Name Reservation</h3>
+                        <h3>Name Selection</h3>
                     </div>
-                    <p>We check availability and reserve your preferred company name with the Spanish Commercial Registry.</p>
+                    <p>Choose and approve your company name through the Portuguese National Registry of Legal Persons.</p>
                     <div class="timeline">1-2 days</div>
                 </div>
 
                 <div class="process-step">
                     <div class="step-header">
                         <div class="step-number">2</div>
-                        <h3>Articles Preparation</h3>
+                        <h3>Capital Deposit</h3>
                     </div>
-                    <p>Preparation and drafting of your company's Articles of Association according to Spanish corporate law.</p>
-                    <div class="timeline">2-3 days</div>
+                    <p>Define share capital structure and make the required deposit in a Portuguese bank.</p>
+                    <div class="timeline">1-3 days</div>
                 </div>
 
                 <div class="process-step">
                     <div class="step-header">
                         <div class="step-number">3</div>
-                        <h3>Notarial Execution</h3>
+                        <h3>Articles Preparation</h3>
                     </div>
-                    <p>Notarial execution of the company formation deed before a Spanish notary public.</p>
-                    <div class="timeline">3-5 days</div>
+                    <p>Prepare comprehensive Articles of Association compliant with Portuguese corporate law.</p>
+                    <div class="timeline">1-2 days</div>
                 </div>
 
                 <div class="process-step">
                     <div class="step-header">
                         <div class="step-number">4</div>
-                        <h3>Registry Filing</h3>
+                        <h3>Registry Submission</h3>
                     </div>
-                    <p>Filing of incorporation documents with the Mercantile Registry for official registration.</p>
-                    <div class="timeline">5-7 days</div>
+                    <p>Submit incorporation documents to the Portuguese Commercial Registry for official registration.</p>
+                    <div class="timeline">2-4 days</div>
                 </div>
 
                 <div class="process-step">
@@ -863,17 +933,17 @@
                         <div class="step-number">5</div>
                         <h3>Tax Registration</h3>
                     </div>
-                    <p>Obtaining permanent tax ID (CIF) and publishing formation notice in the Official Bulletin.</p>
-                    <div class="timeline">3-5 days</div>
+                    <p>Register with tax authorities and social security, obtain company card and NISS number.</p>
+                    <div class="timeline">1-2 days</div>
                 </div>
 
                 <div class="process-step">
                     <div class="step-header">
                         <div class="step-number">6</div>
-                        <h3>Document Delivery</h3>
+                        <h3>Accountant Appointment</h3>
                     </div>
-                    <p>Complete incorporation package delivered including all certificates and official documents.</p>
-                    <div class="timeline">1-2 days</div>
+                    <p>Appoint certified accountant as required by Portuguese law for ongoing compliance.</p>
+                    <div class="timeline">1 day</div>
                 </div>
             </div>
         </div>
@@ -882,158 +952,88 @@
     <!-- Advantages Section -->
     <section class="advantages-section">
         <div class="container">
-            <h2 class="section-title">Why Choose Spain for Your Business?</h2>
+            <h2 class="section-title">Why Choose Portugal for Your Business?</h2>
             
             <div class="advantages-grid">
-                <div class="advantage-card">
-                    <div class="advantage-icon">
-                        <i class="fas fa-globe-europe"></i>
-                    </div>
-                    <h3>EU Market Access</h3>
-                    <p>Full access to the European Union single market with over 500 million consumers and simplified trade regulations.</p>
-                </div>
-
-                <div class="advantage-card">
-                    <div class="advantage-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Double Tax Treaties</h3>
-                    <p>Spain has extensive double taxation treaties with over 100 countries, minimizing international tax burden.</p>
-                </div>
-
-                <div class="advantage-card">
-                    <div class="advantage-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Limited Liability</h3>
-                    <p>S.L. structure provides comprehensive protection for shareholders' personal assets from business liabilities.</p>
-                </div>
-
                 <div class="advantage-card">
                     <div class="advantage-icon">
                         <i class="fas fa-percentage"></i>
                     </div>
                     <h3>Competitive Tax Rate</h3>
-                    <p>25% corporate tax rate with various deductions and incentives for new businesses and R&D activities.</p>
+                    <p>21% corporate tax rate, one of the most competitive in Western Europe, with various incentives available.</p>
                 </div>
 
                 <div class="advantage-card">
                     <div class="advantage-icon">
-                        <i class="fas fa-language"></i>
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <h3>Global Language</h3>
-                    <p>Spanish is the world's second-most spoken language, providing access to Latin American markets.</p>
+                    <h3>Instant Formation</h3>
+                    <p>"Empresa na Hora" allows instant company formation in just one hour at designated service centers.</p>
                 </div>
 
                 <div class="advantage-card">
                     <div class="advantage-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-globe"></i>
                     </div>
-                    <h3>Strategic Location</h3>
-                    <p>Gateway between Europe, Africa, and the Americas with excellent infrastructure and logistics.</p>
+                    <h3>Strategic Gateway</h3>
+                    <p>Gateway to EU, CPLP countries, and Latin American markets with strong cultural and business ties.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                    <h3>Low Capital Requirements</h3>
+                    <p>Lda. companies require only €1 minimum capital, making it accessible for startups and SMEs.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>Residency Options</h3>
+                    <p>Favorable residency programs for business owners, including the Golden Visa program.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Growing Economy</h3>
+                    <p>Stable, growing economy with strong tourism, technology, and renewable energy sectors.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Requirements Section -->
-    <section class="requirements-section">
+    <!-- Company Types Section -->
+    <section class="company-types-section">
         <div class="container">
-            <h2 class="section-title">Spain S.L. Requirements</h2>
+            <h2 class="section-title">Portuguese Company Types</h2>
             
-            <div class="requirements-grid">
-                <div class="requirement-card">
-                    <div class="requirement-value">€3,006</div>
-                    <div class="requirement-label">Minimum Capital</div>
-                    <div class="requirement-description">minimum share capital required, with at least 25% paid up at incorporation.</div>
+            <div class="types-grid">
+                <div class="type-card">
+                    <h3>Lda. (Limited Company)</h3>
+                    <p>Most popular choice for small to medium enterprises, offering flexibility and limited liability protection.</p>
+                    <ul class="type-features">
+                        <li><i class="fas fa-check"></i> €1 minimum capital</li>
+                        <li><i class="fas fa-check"></i> Limited liability</li>
+                        <li><i class="fas fa-check"></i> 1-50 shareholders</li>
+                        <li><i class="fas fa-check"></i> Flexible management</li>
+                        <li><i class="fas fa-check"></i> SME friendly</li>
+                    </ul>
                 </div>
 
-                <div class="requirement-card">
-                    <div class="requirement-value">1</div>
-                    <div class="requirement-label">Minimum Shareholders</div>
-                    <div class="requirement-description">minimum shareholder required. Can be individuals or legal entities of any nationality.</div>
-                </div>
-
-                <div class="requirement-card">
-                    <div class="requirement-value">1</div>
-                    <div class="requirement-label">Minimum Directors</div>
-                    <div class="requirement-description">minimum director required. No residency requirements for directors.</div>
-                </div>
-
-                <div class="requirement-card">
-                    <div class="requirement-value">Required</div>
-                    <div class="requirement-label">Spanish Address</div>
-                    <div class="requirement-description">required for registered office. Can be commercial or residential.</div>
-                </div>
-
-                <div class="requirement-card">
-                    <div class="requirement-value">Unique</div>
-                    <div class="requirement-label">Company Name</div>
-                    <div class="requirement-description">ending with "S.L." or "Sociedad Limitada" must be reserved.</div>
-                </div>
-
-                <div class="requirement-card">
-                    <div class="requirement-value">Required</div>
-                    <div class="requirement-label">Business Activities</div>
-                    <div class="requirement-description">must be specified in the Articles of Association.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tax Benefits Section -->
-    <section class="tax-benefits-section">
-        <div class="container">
-            <h2 class="section-title">Spanish Tax Benefits</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h3>Startup Tax Incentives</h3>
-                    <p>New businesses can benefit from reduced tax rates and various deductions during their first years of operation.</p>
-                </div>
-
-                <div class="benefit-card">
-                    <h3>R&D Tax Credits</h3>
-                    <p>Substantial tax credits available for research and development activities, encouraging innovation.</p>
-                </div>
-
-                <div class="benefit-card">
-                    <h3>International Holding</h3>
-                    <p>Favorable tax treatment for international holding companies and participation exemption regimes.</p>
-                </div>
-
-                <div class="benefit-card">
-                    <h3>Treaty Network</h3>
-                    <p>Extensive double taxation treaty network reduces withholding taxes on international income.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Industries Section -->
-    <section class="industries-section">
-        <div class="container">
-            <h2 class="section-title">Popular Industries in Spain</h2>
-            
-            <div class="industries-grid">
-                <div class="industry-card">
-                    <h3>Tourism & Hospitality</h3>
-                    <p>World's second-most visited country with a thriving tourism and hospitality sector.</p>
-                </div>
-
-                <div class="industry-card">
-                    <h3>Renewable Energy</h3>
-                    <p>Leading European country in renewable energy with significant wind and solar capacity.</p>
-                </div>
-
-                <div class="industry-card">
-                    <h3>Technology</h3>
-                    <p>Growing tech sector with government support for digital transformation and innovation.</p>
-                </div>
-
-                <div class="industry-card">
-                    <h3>Manufacturing</h3>
-                    <p>Strong manufacturing base including automotive, textiles, and food processing industries.</p>
+                <div class="type-card">
+                    <h3>S.A. (Public Company)</h3>
+                    <p>Suitable for larger companies with plans for public listing or significant capital requirements.</p>
+                    <ul class="type-features">
+                        <li><i class="fas fa-check"></i> €50,000 minimum capital</li>
+                        <li><i class="fas fa-check"></i> Transferable shares</li>
+                        <li><i class="fas fa-check"></i> Public listing option</li>
+                        <li><i class="fas fa-check"></i> Board governance</li>
+                        <li><i class="fas fa-check"></i> Large scale operations</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -1042,16 +1042,16 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Ready to Establish Your Spanish S.L.?</h2>
-            <p>Access EU markets and leverage Spain's extensive tax treaty network</p>
+            <h2>Ready to Establish Your Portuguese Company?</h2>
+            <p>Choose from three flexible incorporation methods including instant "Empresa na Hora"</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
                 <a href="order.html" class="btn btn-primary">Start Formation Process</a>
-                <a href="contact.html" class="btn btn-secondary">Contact Spain Specialist</a>
+                <a href="contact.html" class="btn btn-secondary">Contact Portugal Specialist</a>
             </div>
             
             <div style="margin-top: 3rem; text-align: center;">
-                <p style="margin-bottom: 1rem; opacity: 0.9;"><strong>Spain Specialist:</strong> spanish@crmcompany.com</p>
-                <p style="opacity: 0.9;"><strong>Spanish Customer Service:</strong> +34-XXX-XXX-XXX</p>
+                <p style="margin-bottom: 1rem; opacity: 0.9;"><strong>Portugal Specialist:</strong> portugal@crmcompany.com</p>
+                <p style="opacity: 0.9;"><strong>Portuguese Customer Service:</strong> +351-XXX-XXX-XXX</p>
             </div>
         </div>
     </section>
@@ -1111,7 +1111,7 @@
                 });
             }
             
-            console.log('Spain page loaded successfully');
+            console.log('Portugal page loaded successfully');
         });
     </script>
 </body>

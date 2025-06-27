@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Professionals - Partner Program | CRM Company</title>
+    <meta name="description" content="Join CRM Company's professional partner program. Exclusive benefits for lawyers, accountants, consultants, and referral partners in European company formation.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --text-white: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --bg-dark: #1f2937;
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --error-color: #dc2626;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: var(--bg-white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .logo-placeholder {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: var(--text-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .btn-login {
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: var(--text-white);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-login:hover {
+            background: var(--secondary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        /* Professionals Hero */
+        .professionals-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-white);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .professionals-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--text-white);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background: var(--bg-light);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-white);
+            border-color: var(--text-white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-white);
+            color: var(--primary-color);
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+
+        /* Partner Types Section */
+        .partner-types-section {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .partner-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .partner-type-card {
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            border: 2px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .partner-type-card:hover {
+            border-color: var(--primary-color);
+            background: var(--bg-white);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .partner-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .partner-icon i {
+            font-size: 2rem;
+            color: var(--text-white);
+        }
+
+        .partner-type-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .partner-type-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .partner-benefits ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .partner-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .partner-benefits li:before {
+            content: '✓';
+            background: var(--success-color);
+            color: var(--text-white);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .commission-rate {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--primary-color);
+            color: var(--text-white);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-top: auto;
+        }
+
+        .rate {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .rate-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        /* Benefits Overview */
+        .benefits-overview {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-icon i {
+            font-size: 1.5rem;
+            color: var(--text-white);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .benefit-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .benefit-details ul {
+            list-style: none;
+        }
+
+        .benefit-details li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .benefit-details li:before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Commission Structure */
+        .commission-structure {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+
+        .commission-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tier-card {
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            border: 2px solid var(--border-color);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .tier-card.featured {
+            border-color: var(--primary-color);
+            background: var(--bg-white);
+            transform: scale(1.05);
+        }
+
+        .tier-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: var(--text-white);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .tier-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .tier-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .tier-icon i {
+            font-size: 1.5rem;
+            color: var(--text-white);
+        }
+
+        .tier-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-requirement {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .commission-rates {
+            margin-bottom: 2rem;
+        }
+
+        .rate-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .tier-perks ul {
+            list-style: none;
+        }
+
+        .tier-perks li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .tier-perks li:before {
+            content: '✓';
+            background: var(--success-color);
+            color: var(--text-white);
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        /* Commission Calculator */
+        .commission-calculator {
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-top: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .commission-calculator h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .calculator-form {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .calc-input {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .calc-input label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .calc-input input,
+        .calc-input select {
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .calc-input input:focus,
+        .calc-input select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .calculator-result {
+            background: var(--primary-color);
+            color: var(--text-white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .calculator-result h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Application Form */
+        .application-form-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .form-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .form-header p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+        }
+
+        .partner-application-form {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .form-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .form-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .checkbox-custom {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            position: relative;
+            transition: var(--transition);
+            flex-shrink: 0;
+            margin-top: 2px;
+            background: var(--bg-white);
+        }
+
+        .checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--text-white);
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        .checkbox-label a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .form-actions {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .form-note {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .partners-faq {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .faq-question {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Partner Contact CTA */
+        .partner-contact-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            text-align: center;
+            color: var(--text-white);
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-options {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            color: var(--text-white);
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-option:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-option i {
+            font-size: 1.25rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--text-white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-white);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--text-white);
+        }
+
+        .footer-section p {
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: var(--text-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--bg-white);
+                flex-direction: column;
+                padding: 2rem;
+                transition: left 0.3s ease;
+                box-shadow: var(--shadow-lg);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .professionals-hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .partner-types-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .commission-tiers {
+                grid-template-columns: 1fr;
+            }
+
+            .tier-card.featured {
+                transform: none;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .partner-application-form {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <div class="logo-placeholder">CRM</div>
+                        <span class="logo-text">CRM Company</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="comparison.html" class="nav-link">Compare</a></li>
+                    <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li class="nav-item"><a href="professionals.html" class="nav-link active">For Professionals</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-login">Login</a>
+                </div>
+                
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="professionals-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Partner with CRM Company</h1>
+                <p class="hero-subtitle">Join our exclusive professional partner network and grow your business with Europe's leading company formation services. Earn attractive commissions while providing exceptional value to your clients.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Active Partners</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30%</div>
+                        <div class="stat-label">Commission Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">EU Countries</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">€2M+</div>
+                        <div class="stat-label">Partner Earnings</div>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="#apply" class="btn btn-primary btn-large">Join Partner Program</a>
+                    <a href="#partner-types" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Types -->
+    <section id="partner-types" class="partner-types-section">
+        <div class="container">
+            <h2 class="section-title">Who Can Become a Partner?</h2>
+            <p class="section-subtitle">We welcome various types of professionals to join our partner network</p>
+            
+            <div class="partner-types-grid">
+                <div class="partner-type-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Law Firms & Lawyers</h3>
+                    <p>Corporate lawyers, international law firms, and legal consultants specializing in business formation and corporate law.</p>
+                    <div class="partner-benefits">
+                        <ul>
+                            <li>White-label services</li>
+                            <li>Legal document templates</li>
+                            <li>Co-branded materials</li>
+                            <li>Priority support</li>
+                        </ul>
+                    </div>
+                    <div class="commission-rate">
+                        <span class="rate">25-35%</span>
+                        <span class="rate-label">Commission</span>
+                    </div>
+                </div>
+
+                <div class="partner-type-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Accountants & Tax Advisors</h3>
+                    <p>Certified accountants, tax consultants, and financial advisors helping clients with international business setup.</p>
+                    <div class="partner-benefits">
+                        <ul>
+                            <li>Ongoing accounting referrals</li>
+                            <li>Tax planning materials</li>
+                            <li>Compliance support</li>
+                            <li>Educational resources</li>
+                        </ul>
+                    </div>
+                    <div class="commission-rate">
+                        <span class="rate">20-30%</span>
+                        <span class="rate-label">Commission</span>
+                    </div>
+                </div>
+
+                <div class="partner-type-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Business Consultants</h3>
+                    <p>Management consultants, business advisors, and corporate service providers offering strategic guidance.</p>
+                    <div class="partner-benefits">
+                        <ul>
+                            <li>Market expansion tools</li>
+                            <li>Business planning templates</li>
+                            <li>Client presentation materials</li>
+                            <li>Strategic partnerships</li>
+                        </ul>
+                    </div>
+                    <div class="commission-rate">
+                        <span class="rate">20-25%</span>
+                        <span class="rate-label">Commission</span>
+                    </div>
+                </div>
+
+                <div class="partner-type-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Financial Institutions</h3>
+                    <p>Banks, investment firms, and financial service providers supporting business formation clients.</p>
+                    <div class="partner-benefits">
+                        <ul>
+                            <li>Banking partnerships</li>
+                            <li>Account opening assistance</li>
+                            <li>Financial planning tools</li>
+                            <li>Investment guidance</li>
+                        </ul>
+                    </div>
+                    <div class="commission-rate">
+                        <span class="rate">15-25%</span>
+                        <span class="rate-label">Commission</span>
+                    </div>
+                </div>
+
+                <div class="partner-type-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Referral Partners</h3>
+                    <p>Individual professionals, business networks, and organizations that can refer potential clients.</p>
+                    <div class="partner-benefits">
+                        <ul>
+                            <li>Simple referral process</li>
+                            <li>No ongoing obligations</li>
+                            <li>Marketing support</li>
+                            <li>Performance tracking</li>
+                        </ul>
+                    </div>
+                    <div class="commission-rate">
+                        <span class="rate">10-20%</span>
+                        <span class="rate-label">Commission</span>
+                    </div>
+                </div>
+
+                <div class="partner-type-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>International Networks</h3>
+                    <p>Global professional networks, chambers of commerce, and international business associations.</p>
+                    <div class="partner-benefits">
+                        <ul>
+                            <li>Volume discounts</li>
+                            <li>Custom agreements</li>
+                            <li>Training programs</li>
+                            <li>Dedicated support</li>
+                        </ul>
+                    </div>
+                    <div class="commission-rate">
+                        <span class="rate">15-30%</span>
+                        <span class="rate-label">Commission</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Overview -->
+    <section class="benefits-overview">
+        <div class="container">
+            <h2 class="section-title">Partner Program Benefits</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Attractive Commission Structure</h3>
+                    <p>Earn up to 35% commission on all successful referrals with transparent tracking and monthly payments.</p>
+                    <div class="benefit-details">
+                        <ul>
+                            <li>Tiered commission rates</li>
+                            <li>Performance bonuses</li>
+                            <li>Volume incentives</li>
+                            <li>Monthly payments</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Marketing & Sales Support</h3>
+                    <p>Comprehensive marketing materials, sales tools, and co-branded resources to help you succeed.</p>
+                    <div class="benefit-details">
+                        <ul>
+                            <li>Co-branded materials</li>
+                            <li>Sales presentations</li>
+                            <li>Marketing campaigns</li>
+                            <li>Lead generation tools</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Training & Education</h3>
+                    <p>Regular training sessions, webinars, and educational materials to keep you updated on regulations.</p>
+                    <div class="benefit-details">
+                        <ul>
+                            <li>Onboarding program</li>
+                            <li>Monthly webinars</li>
+                            <li>Regulatory updates</li>
+                            <li>Best practices sharing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Dedicated Support</h3>
+                    <p>Access to dedicated partner managers and priority customer support for all your clients.</p>
+                    <div class="benefit-details">
+                        <ul>
+                            <li>Partner manager</li>
+                            <li>Priority support</li>
+                            <li>Technical assistance</li>
+                            <li>24/7 availability</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Performance Tracking</h3>
+                    <p>Real-time dashboard to track referrals, commissions, and performance metrics.</p>
+                    <div class="benefit-details">
+                        <ul>
+                            <li>Real-time tracking</li>
+                            <li>Commission calculator</li>
+                            <li>Performance reports</li>
+                            <li>Client status updates</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Recognition Program</h3>
+                    <p>Annual awards, recognition events, and exclusive partner benefits for top performers.</p>
+                    <div class="benefit-details">
+                        <ul>
+                            <li>Annual awards</li>
+                            <li>Partner events</li>
+                            <li>Exclusive benefits</li>
+                            <li>Industry recognition</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commission Structure -->
+    <section class="commission-structure">
+        <div class="container">
+            <h2 class="section-title">Commission Structure</h2>
+            <p class="section-subtitle">Transparent and competitive commission rates based on partnership level and performance</p>
+            
+            <div class="commission-tiers">
+                <div class="tier-card bronze">
+                    <div class="tier-header">
+                        <div class="tier-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Bronze Partner</h3>
+                        <p class="tier-requirement">0-10 successful referrals</p>
+                    </div>
+                    <div class="tier-benefits">
+                        <div class="commission-rates">
+                            <div class="rate-item">
+                                <span class="service">Basic Packages</span>
+                                <span class="rate">15%</span>
+                            </div>
+                            <div class="rate-item">
+                                <span class="service">Premium Packages</span>
+                                <span class="rate">20%</span>
+                            </div>
+                            <div class="rate-item">
+                                <span class="service">Add-on Services</span>
+                                <span class="rate">10%</span>
+                            </div>
+                        </div>
+                        <div class="tier-perks">
+                            <ul>
+                                <li>Basic marketing materials</li>
+                                <li>Monthly payments</li>
+                                <li>Online portal access</li>
+                                <li>Email support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tier-card silver featured">
+                    <div class="tier-badge">Most Popular</div>
+                    <div class="tier-header">
+                        <div class="tier-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Silver Partner</h3>
+                        <p class="tier-requirement">11-25 successful referrals</p>
+                    </div>
+                    <div class="tier-benefits">
+                        <div class="commission-rates">
+                            <div class="rate-item">
+                                <span class="service">Basic Packages</span>
+                                <span class="rate">20%</span>
+                            </div>
+                            <div class="rate-item">
+                                <span class="service">Premium Packages</span>
+                                <span class="rate">25%</span>
+                            </div>
+                            <div class="rate-item">
+                                <span class="service">Add-on Services</span>
+                                <span class="rate">15%</span>
+                            </div>
+                        </div>
+                        <div class="tier-perks">
+                            <ul>
+                                <li>Co-branded materials</li>
+                                <li>Priority support</li>
+                                <li>Quarterly bonuses</li>
+                                <li>Training webinars</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tier-card gold">
+                    <div class="tier-header">
+                        <div class="tier-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Gold Partner</h3>
+                        <p class="tier-requirement">26+ successful referrals</p>
+                    </div>
+                    <div class="tier-benefits">
+                        <div class="commission-rates">
+                            <div class="rate-item">
+                                <span class="service">Basic Packages</span>
+                                <span class="rate">25%</span>
+                            </div>
+                            <div class="rate-item">
+                                <span class="service">Premium Packages</span>
+                                <span class="rate">30%</span>
+                            </div>
+                            <div class="rate-item">
+                                <span class="service">Add-on Services</span>
+                                <span class="rate">20%</span>
+                            </div>
+                        </div>
+                        <div class="tier-perks">
+                            <ul>
+                                <li>Dedicated partner manager</li>
+                                <li>Custom agreements</li>
+                                <li>Annual bonuses</li>
+                                <li>Exclusive events</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="commission-calculator">
+                <h3>Commission Calculator</h3>
+                <div class="calculator-form">
+                    <div class="calc-input">
+                        <label>Monthly Referrals:</label>
+                        <input type="number" id="monthlyReferrals" min="0" max="100" value="5">
+                    </div>
+                    <div class="calc-input">
+                        <label>Average Package Value:</label>
+                        <select id="packageValue">
+                            <option value="750">Basic ($750)</option>
+                            <option value="1500">Mixed ($1,500)</option>
+                            <option value="8000">Premium ($8,000)</option>
+                        </select>
+                    </div>
+                    <div class="calc-input">
+                        <label>Commission Rate:</label>
+                        <select id="commissionRate">
+                            <option value="0.20">Bronze (20%)</option>
+                            <option value="0.25">Silver (25%)</option>
+                            <option value="0.30">Gold (30%)</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" onclick="calculateCommission()">Calculate Earnings</button>
+                </div>
+                <div class="calculator-result" id="calculatorResult">
+                    <h4>Potential Monthly Earnings: <span id="monthlyEarnings">$0</span></h4>
+                    <p>Annual Potential: <span id="annualEarnings">$0</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section id="apply" class="application-form-section">
+        <div class="container">
+            <div class="form-header">
+                <h2>Join Our Partner Program</h2>
+                <p>Complete the form below to start your application process</p>
+            </div>
+            
+            <form class="partner-application-form" id="partnerApplicationForm">
+                <div class="form-section">
+                    <h3>Professional Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profession">Professional Type *</label>
+                            <select id="profession" name="profession" required>
+                                <option value="">Select profession</option>
+                                <option value="lawyer">Lawyer/Law Firm</option>
+                                <option value="accountant">Accountant/Tax Advisor</option>
+                                <option value="consultant">Business Consultant</option>
+                                <option value="financial">Financial Institution</option>
+                                <option value="referral">Referral Partner</option>
+                                <option value="network">International Network</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Years of Experience *</label>
+                            <select id="experience" name="experience" required>
+                                <option value="">Select experience</option>
+                                <option value="1-3">1-3 years</option>
+                                <option value="4-7">4-7 years</option>
+                                <option value="8-15">8-15 years</option>
+                                <option value="15+">15+ years</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Business Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="companyName">Company/Firm Name *</label>
+                            <input type="text" id="companyName" name="companyName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country *</label>
+                            <select id="country" name="country" required>
+                                <option value="">Select country</option>
+                                <option value="ES">Spain</option>
+                                <option value="PT">Portugal</option>
+                                <option value="SI">Slovenia</option>
+                                <option value="NL">Netherlands</option>
+                                <option value="DE">Germany</option>
+                                <option value="FR">France</option>
+                                <option value="IT">Italy</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="US">United States</option>
+                                <option value="OTHER">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <input type="url" id="website" name="website" placeholder="https://...">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientVolume">Expected Monthly Referrals</label>
+                            <select id="clientVolume" name="clientVolume">
+                                <option value="">Select volume</option>
+                                <option value="1-5">1-5 referrals</option>
+                                <option value="6-15">6-15 referrals</option>
+                                <option value="16-30">16-30 referrals</option>
+                                <option value="30+">30+ referrals</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="services">Current Services Offered</label>
+                            <textarea id="services" name="services" rows="3" placeholder="Describe your current services and how they relate to company formation..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Target Markets</h3>
+                    <div class="form-group">
+                        <label>Which countries are you most interested in? (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="targetCountries" value="spain">
+                                <span class="checkbox-custom"></span>
+                                Spain
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="targetCountries" value="portugal">
+                                <span class="checkbox-custom"></span>
+                                Portugal
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="targetCountries" value="slovenia">
+                                <span class="checkbox-custom"></span>
+                                Slovenia
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="targetCountries" value="netherlands">
+                                <span class="checkbox-custom"></span>
+                                Netherlands
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Additional Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="motivation">Why do you want to become a partner?</label>
+                            <textarea id="motivation" name="motivation" rows="3" placeholder="Tell us about your motivation and goals..."></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="experienceDetails">Relevant Experience</label>
+                            <textarea id="experienceDetails" name="experienceDetails" rows="3" placeholder="Describe your experience with international business, company formation, or related services..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Legal Agreements</h3>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="termsAccepted" name="termsAccepted" required>
+                            <span class="checkbox-custom"></span>
+                            I agree to the Partner Terms & Conditions *
+                        </label>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="privacyAccepted" name="privacyAccepted" required>
+                            <span class="checkbox-custom"></span>
+                            I acknowledge the Privacy Policy *
+                        </label>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="marketing" name="marketing">
+                            <span class="checkbox-custom"></span>
+                            I would like to receive partner updates and marketing materials
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-large">Submit Application</button>
+                    <p class="form-note">We'll review your application and contact you within 3-5 business days.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="partners-faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">What are the requirements to become a partner?</h3>
+                    <div class="faq-answer">
+                        <p>We welcome professionals with relevant experience in law, accounting, consulting, or financial services. You should have an established practice or business with clients who might benefit from European company formation services.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">How and when do I get paid?</h3>
+                    <div class="faq-answer">
+                        <p>Commissions are paid monthly via bank transfer or PayPal. Payments are processed within 30 days of the client's payment confirmation. You can track all earnings in real-time through your partner portal.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Is there a minimum commitment or quota?</h3>
+                    <div class="faq-answer">
+                        <p>No, there are no minimum commitments or quotas. You can refer clients at your own pace. However, inactive partners (no referrals for 12 months) may be subject to account review.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I offer services under my own brand?</h3>
+                    <div class="faq-answer">
+                        <p>Yes, we offer white-label solutions for qualified partners. This allows you to offer company formation services under your own brand while we handle the backend processes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What support do you provide to partners?</h3>
+                    <div class="faq-answer">
+                        <p>Partners receive comprehensive support including marketing materials, training, dedicated account management, priority customer service, and ongoing regulatory updates.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">How do I track my referrals and commissions?</h3>
+                    <div class="faq-answer">
+                        <p>Our partner portal provides real-time tracking of all referrals, their status, commission amounts, and payment history. You'll also receive detailed monthly reports.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="partner-contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Questions About Our Partner Program?</h2>
+                <p>Our partner development team is here to help you understand the opportunities and benefits of joining our network.</p>
+                <div class="contact-options">
+                    <a href="mailto:partners@crmcompany.com" class="contact-option">
+                        <i class="fas fa-envelope"></i>
+                        <span>partners@crmcompany.com</span>
+                    </a>
+                    <a href="tel:+1-800-PARTNER" class="contact-option">
+                        <i class="fas fa-phone"></i>
+                        <span>+1-800-PARTNER</span>
+                    </a>
+                    <button class="contact-option" onclick="schedulePartnerCall()">
+                        <i class="fas fa-calendar"></i>
+                        <span>Schedule a Call</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="spain.html">Spain S.L. Formation</a></li>
+                        <li><a href="portugal.html">Portugal Lda. Formation</a></li>
+                        <li><a href="slovenia.html">Slovenia D.O.O. Formation</a></li>
+                        <li><a href="netherlands.html">Netherlands B.V. Formation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="comparison.html">Compare Countries</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Partners</h3>
+                    <ul>
+                        <li><a href="professionals.html">Partner Program</a></li>
+                        <li><a href="mailto:partners@crmcompany.com">Partner Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>CRM Company</h3>
+                    <p>Your Gateway to European Business Formation</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CRM Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize mobile menu
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    navMenu.classList.toggle('active');
+                    mobileToggle.classList.toggle('active');
+                });
+            }
+
+            // Initialize partner application form
+            const partnerForm = document.getElementById('partnerApplicationForm');
+            if (partnerForm) {
+                partnerForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple form validation
+                    const requiredFields = this.querySelectorAll('[required]');
+                    let isValid = true;
+                    
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            isValid = false;
+                            field.style.borderColor = 'var(--error-color)';
+                        } else {
+                            field.style.borderColor = 'var(--border-color)';
+                        }
+                    });
+                    
+                    if (isValid) {
+                        alert('Thank you for your application! We will review it and contact you within 3-5 business days.');
+                        partnerForm.reset();
+                    } else {
+                        alert('Please fill in all required fields.');
+                    }
+                });
+            }
+            
+            console.log('Professionals page loaded successfully');
+        });
+
+        // Commission Calculator
+        function calculateCommission() {
+            const monthlyReferrals = parseInt(document.getElementById('monthlyReferrals').value) || 0;
+            const packageValue = parseInt(document.getElementById('packageValue').value) || 0;
+            const commissionRate = parseFloat(document.getElementById('commissionRate').value) || 0;
+            
+            const monthlyRevenue = monthlyReferrals * packageValue;
+            const monthlyCommission = monthlyRevenue * commissionRate;
+            const annualCommission = monthlyCommission * 12;
+            
+            document.getElementById('monthlyEarnings').textContent = '$' + monthlyCommission.toLocaleString();
+            document.getElementById('annualEarnings').textContent = '$' + annualCommission.toLocaleString();
+            
+            // Show result
+            document.getElementById('calculatorResult').style.display = 'block';
+        }
+
+        // Schedule Partner Call
+        function schedulePartnerCall() {
+            alert('Partner call scheduling functionality would integrate with a calendar system like Calendly or similar booking platform.');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Comparison - CRM Company</title>
+    <meta name="description" content="Compare Spain, Portugal, Slovenia, and Netherlands to find the perfect jurisdiction for your business formation needs.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --text-white: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --bg-dark: #1f2937;
+            --text-light-dark: #e5e7eb;
+            --border-dark: #374151;
+            --border-color: #e5e7eb;
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --error-color: #dc2626;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: var(--bg-white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .logo-placeholder {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: var(--text-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-login {
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: var(--text-white);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-login:hover {
+            background: var(--secondary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        /* Comparison Hero */
+        .comparison-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-white);
+        }
+
+        .comparison-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Comparison Table */
+        .comparison-table-section {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--text-dark);
+            margin-bottom: 3rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-white);
+            min-width: 800px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .comparison-table th {
+            background: var(--bg-light);
+            font-weight: 600;
+            color: var(--text-dark);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .feature-column {
+            background: var(--bg-light);
+            font-weight: 600;
+            min-width: 200px;
+            position: sticky;
+            left: 0;
+            z-index: 20;
+        }
+
+        .country-column {
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .country-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .flag-placeholder {
+            width: 30px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            font-size: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .spain-flag {
+            background: linear-gradient(to bottom, #c60b1e 33%, #ffc400 33%, #ffc400 66%, #c60b1e 66%);
+        }
+
+        .portugal-flag {
+            background: linear-gradient(to right, #046a38 40%, #da020e 40%);
+        }
+
+        .slovenia-flag {
+            background: linear-gradient(to bottom, #ffffff 33%, #0000ff 33%, #0000ff 66%, #ff0000 66%);
+        }
+
+        .netherlands-flag {
+            background: linear-gradient(to bottom, #ae1c28 33%, #ffffff 33%, #ffffff 66%, #21468b 66%);
+        }
+
+        .section-header td {
+            background: var(--primary-color);
+            color: var(--text-white);
+            font-weight: 700;
+            text-align: center;
+            padding: 1.5rem 1rem;
+        }
+
+        .highlight-best {
+            background: rgba(5, 150, 105, 0.1);
+            color: var(--success-color);
+            font-weight: 600;
+        }
+
+        .highlight-good {
+            background: rgba(251, 191, 36, 0.1);
+            color: #d97706;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--text-white);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--text-white);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .faq-item h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            text-align: center;
+            color: var(--text-white);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--text-white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-white);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--text-white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--bg-white);
+                flex-direction: column;
+                padding: 2rem;
+                transition: left 0.3s ease;
+                box-shadow: var(--shadow-lg);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .comparison-hero h1 {
+                font-size: 2rem;
+            }
+
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <div class="logo-placeholder">CRM</div>
+                        <span class="logo-text">CRM Company</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="spain.html" class="nav-link">Spain</a></li>
+                    <li class="nav-item"><a href="portugal.html" class="nav-link">Portugal</a></li>
+                    <li class="nav-item"><a href="slovenia.html" class="nav-link">Slovenia</a></li>
+                    <li class="nav-item"><a href="netherlands.html" class="nav-link">Netherlands</a></li>
+                    <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-login">Login</a>
+                </div>
+                
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="comparison-hero">
+        <div class="container">
+            <h1>Country Comparison</h1>
+            <p class="hero-subtitle">Compare Spain, Portugal, Slovenia, and Netherlands to find the perfect jurisdiction for your business formation needs.</p>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-table-section">
+        <div class="container">
+            <h2 class="section-title">Detailed Country Comparison</h2>
+            <div class="table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="feature-column">Feature</th>
+                            <th class="country-column">
+                                <div class="country-header">
+                                    <div class="flag-placeholder spain-flag">🇪🇸</div>
+                                    <span>Spain</span>
+                                </div>
+                            </th>
+                            <th class="country-column">
+                                <div class="country-header">
+                                    <div class="flag-placeholder portugal-flag">🇵🇹</div>
+                                    <span>Portugal</span>
+                                </div>
+                            </th>
+                            <th class="country-column">
+                                <div class="country-header">
+                                    <div class="flag-placeholder slovenia-flag">🇸🇮</div>
+                                    <span>Slovenia</span>
+                                </div>
+                            </th>
+                            <th class="country-column">
+                                <div class="country-header">
+                                    <div class="flag-placeholder netherlands-flag">🇳🇱</div>
+                                    <span>Netherlands</span>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="section-header">
+                            <td colspan="5"><h3>Formation Details</h3></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">Company Type</td>
+                            <td>S.L. (Sociedad Limitada)</td>
+                            <td>Lda./S.A.</td>
+                            <td>D.O.O.</td>
+                            <td>B.V. (Besloten Vennootschap)</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">Minimum Capital</td>
+                            <td>€3,006</td>
+                            <td class="highlight-best">€1 (Lda.)</td>
+                            <td>€7,500</td>
+                            <td class="highlight-best">€1</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">Formation Time</td>
+                            <td>15-20 days</td>
+                            <td class="highlight-best">5-10 days</td>
+                            <td>2 months</td>
+                            <td class="highlight-good">1-2 weeks</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">Online Formation</td>
+                            <td>No</td>
+                            <td class="highlight-best">Yes</td>
+                            <td class="highlight-best">Yes</td>
+                            <td class="highlight-good">Partial</td>
+                        </tr>
+                        <tr class="section-header">
+                            <td colspan="5"><h3>Our Service Pricing</h3></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">Basic Package</td>
+                            <td>$750</td>
+                            <td>$850</td>
+                            <td class="highlight-best">$650</td>
+                            <td>$950</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">Premium Package</td>
+                            <td>$7,500</td>
+                            <td>$8,000</td>
+                            <td class="highlight-best">$6,500</td>
+                            <td>$9,500</td>
+                        </tr>
+                        <tr class="section-header">
+                            <td colspan="5"><h3>Tax Environment</h3></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">Corporate Tax Rate</td>
+                            <td>25%</td>
+                            <td class="highlight-good">21%</td>
+                            <td class="highlight-best">19%</td>
+                            <td>25.8%</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">VAT Rate (Standard)</td>
+                            <td>21%</td>
+                            <td>23%</td>
+                            <td>22%</td>
+                            <td>21%</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">Tax Treaties</td>
+                            <td class="highlight-best">100+</td>
+                            <td>70+</td>
+                            <td>60+</td>
+                            <td class="highlight-good">95+</td>
+                        </tr>
+                        <tr class="section-header">
+                            <td colspan="5"><h3>Business Environment</h3></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">EU Market Access</td>
+                            <td>Full</td>
+                            <td>Full</td>
+                            <td>Full</td>
+                            <td>Full</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">English Proficiency</td>
+                            <td>Medium</td>
+                            <td>Medium</td>
+                            <td class="highlight-good">Good</td>
+                            <td class="highlight-best">Excellent</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">Ease of Doing Business</td>
+                            <td class="highlight-best">30th</td>
+                            <td>39th</td>
+                            <td>37th</td>
+                            <td>42nd</td>
+                        </tr>
+                        <tr class="section-header">
+                            <td colspan="5"><h3>Compliance Requirements</h3></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">Minimum Shareholders</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">Minimum Directors</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">Local Director Required</td>
+                            <td class="highlight-best">No</td>
+                            <td class="highlight-best">No</td>
+                            <td>Representative</td>
+                            <td class="highlight-best">No</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-column">Annual Filing</td>
+                            <td>Required</td>
+                            <td>Required</td>
+                            <td>Required</td>
+                            <td>Required</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Which countries are best for startups?</h3>
+                    <p>Low capital requirements (€1), fast formation, and supportive business environments make these ideal for startups.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Where can I get the lowest tax rates?</h3>
+                    <p>Lowest corporate tax rates in the EU with attractive incentives for businesses and holding structures.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Which countries offer the best international opportunities?</h3>
+                    <p>Extensive treaty networks and strategic locations provide optimal international business opportunities.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What are the fastest formation options?</h3>
+                    <p>Fastest formation times with Portugal's "Empresa na Hora" and Netherlands' efficient processes.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Which jurisdictions are best for holding companies?</h3>
+                    <p>Netherlands and Slovenia are excellent for holding companies due to their extensive tax treaty networks and participation exemption regimes.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I incorporate remotely?</h3>
+                    <p>Yes, all four jurisdictions allow remote formation. Portugal and Slovenia offer fully online processes, while Spain and Netherlands can be completed with proper documentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Choose Your Jurisdiction?</h2>
+            <p>Our experts are ready to help you select the perfect European jurisdiction for your business</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="contact.html" class="btn btn-primary">Get Expert Consultation</a>
+                <a href="order.html" class="btn btn-secondary">Start Formation Process</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="spain.html">Spain S.L. Formation</a></li>
+                        <li><a href="portugal.html">Portugal Lda. Formation</a></li>
+                        <li><a href="slovenia.html">Slovenia D.O.O. Formation</a></li>
+                        <li><a href="netherlands.html">Netherlands B.V. Formation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="comparison.html">Compare Countries</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Regional Contacts</h3>
+                    <ul>
+                        <li>Spain: spanish@crmcompany.com</li>
+                        <li>Portugal: portugal@crmcompany.com</li>
+                        <li>Slovenia: slovenia@crmcompany.com</li>
+                        <li>Netherlands: netherlands@crmcompany.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>CRM Company</h3>
+                    <p>Your Gateway to European Business Formation</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CRM Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize mobile menu
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    navMenu.classList.toggle('active');
+                    mobileToggle.classList.toggle('active');
+                });
+            }
+            
+            console.log('Comparison page loaded successfully');
+        });
+    </script>
+</body>
+</html>
