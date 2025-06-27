@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Company - European Business Formation Services</title>
+    <meta name="description" content="Expert company formation services across Spain, Portugal, Slovenia, and Netherlands. Your gateway to European business formation with local expertise.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img src="images/crm-logo.png" alt="CRM Company" class="logo">
+                        <span class="logo-text">CRM Company</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spain.html">Spain Formation</a></li>
+                            <li><a href="portugal.html">Portugal Formation</a></li>
+                            <li><a href="slovenia.html">Slovenia Formation</a></li>
+                            <li><a href="netherlands.html">Netherlands Formation</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Countries <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spain.html">Spain</a></li>
+                            <li><a href="portugal.html">Portugal</a></li>
+                            <li><a href="slovenia.html">Slovenia</a></li>
+                            <li><a href="netherlands.html">Netherlands</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li class="nav-item"><a href="professionals.html" class="nav-link">For Professionals</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <select id="language">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="pt">Português</option>
+                            <option value="nl">Nederlands</option>
+                            <option value="sl">Slovenščina</option>
+                        </select>
+                    </div>
+                    <a href="login.html" class="btn-login">Login</a>
+                </div>
+                
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Gateway to European Business Formation</h1>
+                <p class="hero-subtitle">Expert incorporation services across Spain, Portugal, Slovenia, and Netherlands with local expertise and international reach.</p>
+                <div class="hero-buttons">
+                    <a href="#countries" class="btn btn-primary">Start Your Company</a>
+                    <a href="comparison.html" class="btn btn-secondary">Compare Countries</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/europe-map.png" alt="European Business Formation">
+            </div>
+        </div>
+    </section>
+
+    <!-- Country Selection -->
+    <section id="countries" class="countries-section">
+        <div class="container">
+            <h2 class="section-title">Choose Your Incorporation Destination</h2>
+            <p class="section-subtitle">Select from our four specialized European jurisdictions</p>
+            
+            <div class="countries-grid">
+                <div class="country-card" data-country="spain">
+                    <div class="country-flag">
+                        <img src="images/flags/spain.png" alt="Spain Flag">
+                    </div>
+                    <h3>Spain</h3>
+                    <p class="country-type">S.L. Formation</p>
+                    <div class="country-pricing">
+                        <span class="price-from">From</span>
+                        <span class="price">$750</span>
+                    </div>
+                    <ul class="country-features">
+                        <li><i class="fas fa-check"></i> Double tax treaty benefits</li>
+                        <li><i class="fas fa-check"></i> Limited liability protection</li>
+                        <li><i class="fas fa-check"></i> 15-20 days formation</li>
+                    </ul>
+                    <a href="spain.html" class="btn btn-country">Learn More</a>
+                </div>
+
+                <div class="country-card" data-country="portugal">
+                    <div class="country-flag">
+                        <img src="images/flags/portugal.png" alt="Portugal Flag">
+                    </div>
+                    <h3>Portugal</h3>
+                    <p class="country-type">Lda./S.A. Formation</p>
+                    <div class="country-pricing">
+                        <span class="price-from">From</span>
+                        <span class="price">$850</span>
+                    </div>
+                    <ul class="country-features">
+                        <li><i class="fas fa-check"></i> Three incorporation methods</li>
+                        <li><i class="fas fa-check"></i> "Empresa na Hora" instant setup</li>
+                        <li><i class="fas fa-check"></i> 5-10 days formation</li>
+                    </ul>
+                    <a href="portugal.html" class="btn btn-country">Learn More</a>
+                </div>
+
+                <div class="country-card" data-country="slovenia">
+                    <div class="country-flag">
+                        <img src="images/flags/slovenia.png" alt="Slovenia Flag">
+                    </div>
+                    <h3>Slovenia</h3>
+                    <p class="country-type">D.O.O. Formation</p>
+                    <div class="country-pricing">
+                        <span class="price-from">From</span>
+                        <span class="price">$650</span>
+                    </div>
+                    <ul class="country-features">
+                        <li><i class="fas fa-check"></i> E-VEM one-stop-shop</li>
+                        <li><i class="fas fa-check"></i> €7,500 minimum capital</li>
+                        <li><i class="fas fa-check"></i> 2 months formation</li>
+                    </ul>
+                    <a href="slovenia.html" class="btn btn-country">Learn More</a>
+                </div>
+
+                <div class="country-card" data-country="netherlands">
+                    <div class="country-flag">
+                        <img src="images/flags/netherlands.png" alt="Netherlands Flag">
+                    </div>
+                    <h3>Netherlands</h3>
+                    <p class="country-type">B.V. Formation</p>
+                    <div class="country-pricing">
+                        <span class="price-from">From</span>
+                        <span class="price">$950</span>
+                    </div>
+                    <ul class="country-features">
+                        <li><i class="fas fa-check"></i> €1 minimum capital</li>
+                        <li><i class="fas fa-check"></i> Chamber of Commerce</li>
+                        <li><i class="fas fa-check"></i> 1-2 weeks formation</li>
+                    </ul>
+                    <a href="netherlands.html" class="btn btn-country">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">Simple 6-Step Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Country Selection</h3>
+                    <p>Choose your incorporation jurisdiction</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Package Selection</h3>
+                    <p>Select service level and add-ons</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Payment</h3>
+                    <p>Secure multi-currency processing</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Documentation</h3>
+                    <p>Country-specific document preparation</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Submission</h3>
+                    <p>Filing with relevant authorities</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Completion</h3>
+                    <p>Delivery of incorporation documents</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose CRM Company?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-europe"></i>
+                    </div>
+                    <h3>Multi-Country Expertise</h3>
+                    <p>One-stop European incorporation service with deep local knowledge in each jurisdiction.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Tax Treaty Optimization</h3>
+                    <p>Strategic advice on tax treaty benefits and cross-border business optimization.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Regulatory Compliance</h3>
+                    <p>Expert guidance on regulatory requirements and ongoing compliance obligations.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Local Specialists</h3>
+                    <p>Dedicated country specialists providing personalized service in local languages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your European Business?</h2>
+            <p>Get expert guidance from our incorporation specialists</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Get Free Consultation</a>
+                <a href="comparison.html" class="btn btn-secondary">Compare Options</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="spain.html">Spain S.L. Formation</a></li>
+                        <li><a href="portugal.html">Portugal Lda. Formation</a></li>
+                        <li><a href="slovenia.html">Slovenia D.O.O. Formation</a></li>
+                        <li><a href="netherlands.html">Netherlands B.V. Formation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Regional Contacts</h3>
+                    <ul>
+                        <li>Spain: spanish@crmcompany.com</li>
+                        <li>Portugal: portugal@crmcompany.com</li>
+                        <li>Slovenia: slovenia@crmcompany.com</li>
+                        <li>Netherlands: netherlands@crmcompany.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>CRM Company</h3>
+                    <p>Your Gateway to European Business Formation</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CRM Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
